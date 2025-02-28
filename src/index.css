@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Poppins", serif;
+}
+
+@theme {
+  --container-padding: 1rem;
+}
+
+@utility container {
+  margin-inline: auto; /* Centers the container */
+  padding-inline: var(--container-padding); /* Applies custom horizontal padding */
+
+  @media (min-width: 640px) {
+    --container-padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    --container-padding: 4rem;
+  }
+}
