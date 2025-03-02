@@ -7,7 +7,7 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
-          className="font-bold text-3xl lg:text-5xl text-slate-600 pb-3 leading-10 lg:leading-14"
+          className="font-bold text-3xl md:text-5xl text-slate-600 pb-3 leading-10 md:leading-14"
         >
           Empowering <span className="text-blue-400">Governance,</span>{" "}
           Fostering <span className="text-blue-400">Unity</span> Through{" "}

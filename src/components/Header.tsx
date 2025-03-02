@@ -80,7 +80,7 @@ export default function Header() {
             <li key={item.name}>
               <a
                 href={item.href}
-                className="text-lg font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
+                className="text-sm lg:text-lg font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
               >
                 {item.name}
               </a>
