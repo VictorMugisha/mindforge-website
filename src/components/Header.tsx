@@ -26,7 +26,7 @@ export default function Header() {
   }, [displayMobileNav]);
 
   return (
-    <header className="flex items-center justify-between py-2 md:py-4 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0">
+    <header className="flex items-center justify-between py-2 md:py-4 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0 z-10">
       <a href="#">
         <h2 className="font-bold text-2xl md:text-4xl text-blue-500">
           MINDFORGE
@@ -48,14 +48,13 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       <nav
-        data-aos="fade-left"
         aria-hidden={!displayMobileNav}
         className={`${
           displayMobileNav ? "flex" : "hidden"
         } md:hidden flex-col items-end p-6 space-y-4 bg-white w-[70%] h-screen fixed top-0 right-0 z-50`}
       >
         <button className="font-bold mb-10" onClick={handleCloseNav}>
-          <ImCross className="text-2xl font-bold" />
+          <ImCross className="text-2xl font-bold cursor-pointer" />
         </button>
         <ul className="flex flex-col space-y-8 w-full items-end">
           {navItems.map((item) => (
@@ -75,13 +74,13 @@ export default function Header() {
       </nav>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex md:items-center md:justify-start md:gap-4">
-        <ul className="flex md:items-center md:justify-start md:gap-2">
+      <nav className="hidden md:flex items-center justify-start gap-6">
+        <ul className="flex items-center justify-start gap-4">
           {navItems.map((item) => (
             <li key={item.name}>
               <a
                 href={item.href}
-                className="text-sm font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
+                className="text-lg font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
               >
                 {item.name}
               </a>
