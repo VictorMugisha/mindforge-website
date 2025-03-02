@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* This is not working!!! */
+@layer base {
+  :root {
+    --color-hero-dark-blue: 226 236 246;
+    --color-hero-light-blue: 230 242 247;
+  }
+}
+
 * {
   font-family: "Poppins", serif;
 }
