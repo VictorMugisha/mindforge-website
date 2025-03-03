@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import HeroServices from "../components/HeroServices";
 import Impact from "../components/Impact";
+import MissionVision from "../components/MissionVision";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Hero />
       <HeroServices />
       <Impact />
+      <MissionVision />
     </div>
   );
 }
