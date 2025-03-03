@@ -1,13 +1,14 @@
 import { useState, useCallback, useEffect } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { ImCross } from "react-icons/im";
+import { Link } from "react-router-dom";
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "About Us", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Gallery", href: "#" },
-  { name: "Blog", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "about" },
+  { name: "Projects", href: "projects" },
+  { name: "Gallery", href: "gallery" },
+  { name: "Blog", href: "blog" },
 ];
 
 export default function Header() {
@@ -59,12 +60,12 @@ export default function Header() {
         <ul className="flex flex-col space-y-8 w-full items-end">
           {navItems.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className="text-lg font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -78,12 +79,12 @@ export default function Header() {
         <ul className="flex items-center justify-start gap-8">
           {navItems.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
+              <Link
+                to={item.href}
                 className="text-sm font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
               >
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
