@@ -26,9 +26,9 @@ export default function Header() {
   }, [displayMobileNav]);
 
   return (
-    <header className="flex items-center justify-between py-2 md:py-4 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0 z-10">
+    <header className="flex items-center justify-between py-2 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0 z-10">
       <a href="#">
-        <h2 className="font-bold text-2xl md:text-4xl text-blue-500">
+        <h2 className="font-bold text-xl md:text-2xl text-blue-500">
           MINDFORGE
         </h2>
       </a>
@@ -75,12 +75,12 @@ export default function Header() {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center justify-start gap-6">
-        <ul className="flex items-center justify-start gap-4">
+        <ul className="flex items-center justify-start gap-8">
           {navItems.map((item) => (
             <li key={item.name}>
               <a
                 href={item.href}
-                className="text-sm lg:text-lg font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
+                className="text-sm font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
               >
                 {item.name}
               </a>

@@ -1,13 +1,13 @@
 
 export default function Hero() {
   return (
-    <section className="flex gap-7 md:py-28 md:px-8 w-full bg-linear-to-r from-blue-100 to-blue-50">
-      <div className="w-full flex flex-col items-center gap-5 text-center mb-10 py-10 px-4 md:p-0">
+    <section className="flex items-center justify-between gap-7 md:px-8 md:py-10 w-full bg-linear-to-r from-blue-100 to-blue-50">
+      <div className="w-full flex flex-col items-center lg:items-start gap-5 mb-10 py-10 px-4 md:p-0">
         <h1
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
-          className="italic font-bold text-3xl md:text-5xl text-slate-600 pb-3 leading-10 md:leading-14"
+          className="italic font-bold text-3xl md:text-4xl text-slate-600 pb-3 leading-10 md:leading-14 text-center lg:text-left"
         >
           Empowering <span className="text-blue-400">Governance,</span>{" "}
           Fostering <span className="text-blue-400">Unity</span> Through{" "}
@@ -17,7 +17,7 @@ export default function Hero() {
           data-aos="zoom-in"
           data-aos-duration="1000"
           data-aos-delay="200"
-          className="leading-7 text-slate-500 pb-3 mt-6 text-center"
+          className="leading-7 text-slate-500 pb-3 mt-6 text-center lg:text-left"
         >
           At <span className="font-bold">MindForge</span>, we are dedicated to
           identifying and addressing governance challenges across East Africa to
@@ -36,6 +36,14 @@ export default function Hero() {
           </button>
         </div>
       </div>
+      <img
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        src="/leadership-rafiki.png"
+        alt="Leadership"
+        className="hidden lg:block size-1/2 object-cover object-center"
+      />
     </section>
   );
 }
