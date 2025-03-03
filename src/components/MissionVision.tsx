@@ -2,7 +2,7 @@ import { IoNotificationsSharp } from "react-icons/io5";
 
 export default function MissionVision() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 lg:px-24 my-16">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 lg:px-24 py-16 bg-white">
       <div
         data-aos="fade-right"
         data-aos-duration="1000"

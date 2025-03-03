@@ -1,4 +1,3 @@
-
 export default function Hero() {
   return (
     <section className="flex items-center justify-between gap-7 md:px-8 md:py-10 w-full bg-linear-to-r from-blue-100 to-blue-50">
@@ -9,8 +8,7 @@ export default function Hero() {
           data-aos-delay="200"
           className="italic font-bold text-3xl md:text-4xl text-slate-600 pb-3 leading-10 md:leading-14 text-center lg:text-left"
         >
-          Empowering <span className="text-blue-400">Governance,</span>{" "}
-          Fostering <span className="text-blue-400">Unity</span> Through{" "}
+          Empowering <span className="text-blue-400">Governance,</span> Through{" "}
           <span className="text-blue-400">Regional Integration</span>
         </h1>
         <p
@@ -19,13 +17,9 @@ export default function Hero() {
           data-aos-delay="200"
           className="leading-7 text-slate-500 pb-3 mt-6 text-center lg:text-left"
         >
-          At <span className="font-bold">MindForge</span>, we are dedicated to
-          identifying and addressing governance challenges across East Africa to
-          enhance regional integration. Our mission is to promote effective
-          governance practices, strengthen institutional frameworks, and foster
-          collaboration among nations. By tackling issues such as transparency,
-          accountability, and policy development, we aim to build a more unified
-          and prosperous East African community.
+          <span className="font-bold">MindForge</span>, is a dedicated
+          organization committed to combating corruption within the East African
+          Community. By promoting transparency and accountability.
         </p>
         <div className="flex gap-4">
           <button className="text-sm font-semibold text-white bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">

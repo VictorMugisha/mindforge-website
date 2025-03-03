@@ -5,7 +5,7 @@ import { SiReverbnation } from "react-icons/si";
 
 export default function HeroServices() {
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-8 md:px-8 md:py-10 w-full border-b border-slate-200">
+    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-8 md:px-8 md:py-10 w-full border-b border-slate-200 bg-white">
       <div className="flex gap-4 items-center justify-start">
         <div className="flex items-center justify-center size-16 bg-blue-100 rounded-2xl">
           <GiArchiveResearch className="text-5xl text-blue-500" />
