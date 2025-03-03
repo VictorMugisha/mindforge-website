@@ -3,7 +3,12 @@ import { IoNotificationsSharp } from "react-icons/io5";
 export default function MissionVision() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 lg:px-24 my-16">
-      <div className="flex flex-col items-center gap-6 bg-white rounded-2xl px-8 py-16 lg:p-16 text-center shadow-xl">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        className="flex flex-col items-center gap-6 bg-white rounded-2xl px-8 py-16 lg:p-16 text-center shadow-xl"
+      >
         <h2 className="text-2xl font-bold text-slate-700">Our Mission</h2>
         <p>
           Our mission is{" "}
@@ -19,7 +24,12 @@ export default function MissionVision() {
         </button>
       </div>
 
-      <div className="relative flex flex-col items-center gap-6 bg-blue-500 text-white rounded-2xl px-8 py-16 lg:p-16 text-center shadow-xl">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        className="relative flex flex-col items-center gap-6 bg-blue-500 text-white rounded-2xl px-8 py-16 lg:p-16 text-center shadow-xl"
+      >
         <IoNotificationsSharp className="text-6xl text-amber-500 absolute top-[-25px] right-5 rotate-45 hover:text-9xl hover:top-[-60px] hover:right-0 transition-all cursor-pointer" />
         <h2 className="text-2xl font-bold text-white">Our Vission Statement</h2>
         <p>

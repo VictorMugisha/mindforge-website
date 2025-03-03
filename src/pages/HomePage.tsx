@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import HeroServices from "../components/HeroServices";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <HeroServices />
       <Impact />
       <MissionVision />
+      <Footer />
     </div>
   );
 }
