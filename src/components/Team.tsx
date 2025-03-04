@@ -16,7 +16,7 @@ export default function Team() {
     },
     {
       name: "Victor Mugisha",
-      role: "Developer",
+      role: "Software Developer",
       image: "/victor-profile.png",
       firstColor: "from-gray-200",
       secondColor: "to-gray-300",
@@ -31,7 +31,7 @@ export default function Team() {
     {
       name: "Boaz Prince Iza",
       role: "Product Manager",
-      image: "/profile-1.png",
+      image: "/profile-2.png",
       firstColor: "from-lime-50",
       secondColor: "to-lime-100",
     },
@@ -47,7 +47,7 @@ export default function Team() {
           driving positive change and sustainable development.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-14 sm:gap-x-4 sm:gap-y-14 mt-10 place-content-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-14 sm:gap-x-4 sm:gap-y-14 mt-10">
         {teamData.map((member, index) => (
           <div
             key={index}

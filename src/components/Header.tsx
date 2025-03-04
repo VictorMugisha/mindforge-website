@@ -1,14 +1,14 @@
 import { useState, useCallback, useEffect } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { ImCross } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "about" },
-  { name: "Projects", href: "projects" },
-  { name: "Gallery", href: "gallery" },
-  { name: "Blog", href: "blog" },
+  { name: "About Us", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default function Header() {
@@ -28,14 +28,14 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between py-2 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0 z-10">
-      <Link to="/">
+      <NavLink to="/" onClick={handleCloseNav}>
         <h2 className="font-bold text-xl md:text-2xl text-blue-500">
           MINDFORGE
         </h2>
-      </Link>
+      </NavLink>
 
       {/* Mobile Navigation Button */}
-      <button className="md:hidden" onClick={handleOpenNav}>
+      <button className="md:hidden cursor-pointer" onClick={handleOpenNav}>
         <HiMenuAlt3 className="text-3xl" />
       </button>
 
@@ -60,18 +60,27 @@ export default function Header() {
         <ul className="flex flex-col space-y-8 w-full items-end">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link
+              <NavLink
                 to={item.href}
-                className="text-lg font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
+                className={({ isActive }) =>
+                  `text-lg font-semibold hover:text-blue-500 transition-all text-slate-700 ${
+                    isActive ? "text-blue-500" : ""
+                  }`
+                }
+                onClick={handleCloseNav}
               >
                 {item.name}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-        <button className="text-lg font-semibold text-white bg-blue-500 py-3 px-4 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">
+        <NavLink
+          to="/contact"
+          className="text-lg font-semibold text-white bg-blue-500 py-3 px-4 rounded-lg hover:bg-blue-400 transition-all cursor-pointer"
+          onClick={handleCloseNav}
+        >
           Contact Us
-        </button>
+        </NavLink>
       </nav>
 
       {/* Desktop Navigation */}
@@ -79,18 +88,25 @@ export default function Header() {
         <ul className="flex items-center justify-start gap-8">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link
+              <NavLink
                 to={item.href}
-                className="text-sm font-semibold hover:text-blue-500 hover:transition-all text-slate-700"
+                className={({ isActive }) =>
+                  `text-sm font-semibold hover:text-blue-500 transition-all text-slate-700 ${
+                    isActive ? "text-blue-500" : ""
+                  }`
+                }
               >
                 {item.name}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-        <button className="text-sm font-semibold text-white bg-blue-500 py-3 px-4 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">
+        <NavLink
+          to="/contact"
+          className="text-sm font-semibold text-white bg-blue-500 py-3 px-4 rounded-lg hover:bg-blue-400 transition-all cursor-pointer"
+        >
           Contact Us
-        </button>
+        </NavLink>
       </nav>
     </header>
   );
