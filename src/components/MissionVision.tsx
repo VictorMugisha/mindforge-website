@@ -4,7 +4,7 @@ export default function MissionVision() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 lg:px-24 py-16 bg-white">
       <div
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"
         className="flex flex-col items-center gap-6 bg-white rounded-2xl px-8 py-16 lg:p-16 text-center shadow-xl"
@@ -25,7 +25,7 @@ export default function MissionVision() {
       </div>
 
       <div
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"
         className="relative flex flex-col items-center gap-6 bg-blue-500 text-white rounded-2xl px-8 py-16 lg:p-16 text-center shadow-xl"

@@ -6,12 +6,12 @@ import NewsLetter from "../components/NewsLetter";
 
 export default function HomePage() {
   return (
-    <div className="max-w-[2000px] mx-auto mt-2">
+    <>
       <Hero />
       <HeroServices />
       <Impact />
       <MissionVision />
       <NewsLetter />
-    </div>
+    </>
   );
 }
