@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { ImCross } from "react-icons/im";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -13,9 +13,20 @@ const navItems = [
 
 export default function Header() {
   const [displayMobileNav, setDisplayMobileNav] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleCloseNav = useCallback(() => setDisplayMobileNav(false), []);
   const handleOpenNav = useCallback(() => setDisplayMobileNav(true), []);
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+    handleCloseNav();
+  };
 
   useEffect(() => {
     if (displayMobileNav) {
@@ -28,11 +39,14 @@ export default function Header() {
 
   return (
     <header className="flex items-center justify-between py-2 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0 z-10">
-      <NavLink to="/" onClick={handleCloseNav}>
+      <button
+        onClick={handleLogoClick}
+        className="focus:outline-none cursor-pointer"
+      >
         <h2 className="font-bold text-xl md:text-2xl text-blue-500">
           MINDFORGE
         </h2>
-      </NavLink>
+      </button>
 
       {/* Mobile Navigation Button */}
       <button className="md:hidden cursor-pointer" onClick={handleOpenNav}>
@@ -57,15 +71,15 @@ export default function Header() {
         <button className="font-bold mb-10" onClick={handleCloseNav}>
           <ImCross className="text-2xl font-bold cursor-pointer" />
         </button>
-        <ul className="flex flex-col space-y-8 w-full items-end">
+        <ul className="flex flex-col space-y-4 w-full items-end">
           {navItems.map((item) => (
             <li key={item.name}>
               <NavLink
                 to={item.href}
                 className={({ isActive }) =>
-                  `text-lg font-semibold hover:text-blue-500 transition-all text-slate-700 ${
-                    isActive ? "text-blue-500" : ""
-                  }`
+                  isActive
+                    ? "text-sm font-semibold text-blue-500 transition-all"
+                    : "text-sm font-semibold text-slate-700 hover:text-blue-500 transition-all"
                 }
                 onClick={handleCloseNav}
               >
@@ -91,9 +105,9 @@ export default function Header() {
               <NavLink
                 to={item.href}
                 className={({ isActive }) =>
-                  `text-sm font-semibold hover:text-blue-500 transition-all text-slate-700 ${
-                    isActive ? "text-blue-500" : ""
-                  }`
+                  isActive
+                    ? "text-sm font-semibold text-blue-500 transition-all"
+                    : "text-sm font-semibold text-slate-700 hover:text-blue-500 transition-all"
                 }
               >
                 {item.name}

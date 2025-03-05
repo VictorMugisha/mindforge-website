@@ -4,12 +4,7 @@ export default function NewsLetter() {
       <h2 className="font-bold text-2xl lg:text-3xl text-slate-700 px-4">
         Interested in us? Subscribe to our Newsletter
       </h2>
-      <div
-        className="flex items-center justify-center px-4"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="200"
-      >
+      <div className="flex items-center justify-center px-4">
         <input
           type="email"
           name="user-email"
