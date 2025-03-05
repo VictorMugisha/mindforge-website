@@ -3,6 +3,7 @@ import HeroServices from "../components/HeroServices";
 import Impact from "../components/Impact";
 import MissionVision from "../components/MissionVision";
 import NewsLetter from "../components/NewsLetter";
+import Timeline from "../components/Timeline";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Hero />
       <HeroServices />
       <Impact />
+      <Timeline />
       <MissionVision />
       <NewsLetter />
     </>
