@@ -8,8 +8,8 @@ export default function Team() {
       secondColor: "to-slate-300",
     },
     {
-      name: "Shannela Keza",
-      role: "Product Manager",
+      name: "Chanella Keza",
+      role: "Marketing Manager",
       image: "/profile-1.png",
       firstColor: "from-blue-100",
       secondColor: "to-blue-200",
@@ -30,7 +30,7 @@ export default function Team() {
     },
     {
       name: "Boaz Prince Iza",
-      role: "Product Manager",
+      role: "Software Developer",
       image: "/profile-2.png",
       firstColor: "from-lime-50",
       secondColor: "to-lime-100",
