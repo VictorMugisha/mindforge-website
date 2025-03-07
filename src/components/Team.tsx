@@ -23,7 +23,7 @@ export default function Team() {
     },
     {
       name: "Grace Muzirankoni",
-      role: "Product Manager",
+      role: "Public Relations",
       image: "/profile-1.png",
       firstColor: "from-emerald-50",
       secondColor: "to-emerald-100",
