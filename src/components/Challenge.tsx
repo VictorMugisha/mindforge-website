@@ -8,6 +8,7 @@ interface ChallengeProps {
   thumbnail: string;
   videoId: string;
   videoUrl: string;
+  hashatgs?: string[];
 }
 
 export default function Challenge({
@@ -17,6 +18,7 @@ export default function Challenge({
   thumbnail,
   videoId,
   videoUrl,
+  hashatgs,
 }: ChallengeProps) {
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-6 p-4 md:p-8 bg-gray-100 rounded-lg shadow-lg mx-4 lg:mx-10">
@@ -45,6 +47,13 @@ export default function Challenge({
         >
           Watch on YouTube
         </a>
+        <div className="flex flex-wrap mt-4 gap-y-2">
+          {hashatgs?.map((hashatg, index) => (
+            <span key={index} className="text-xs bg-gray-300 text-gray-700 px-2 py-1 rounded-lg mr-2">
+              #{hashatg}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

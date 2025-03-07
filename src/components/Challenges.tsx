@@ -24,6 +24,7 @@ export default function Challenges() {
           thumbnail={video.thumbnail}
           videoId={video.videoId}
           videoUrl={video.videoUrl}
+          hashatgs={["ThinkTank", "Innovation", "Healthcare", "Education"]}
         />
       ))}
     </section>
