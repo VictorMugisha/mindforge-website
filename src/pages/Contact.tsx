@@ -72,7 +72,7 @@ export default function Contact() {
 
   return (
     <div className="flex justify-center items-center my-10">
-      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md mx-4">
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
           Contact Us
         </h2>
@@ -88,6 +88,7 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
               className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
@@ -108,6 +109,7 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
               className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
@@ -128,6 +130,7 @@ export default function Contact() {
               type="tel"
               id="phone"
               name="phone"
+              placeholder="Your Phone Number"
               value={formData.phone}
               onChange={handleChange}
               className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
@@ -147,6 +150,7 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
+              placeholder="Your Message..."
               value={formData.message}
               onChange={handleChange}
               className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
