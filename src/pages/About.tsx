@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Team from "../components/Team";
 
 export default function About() {
@@ -24,22 +25,22 @@ export default function About() {
         </p>
 
         <div className="flex gap-4 mt-8">
-          <a
-            href="/services"
+          <Link
+            to="/projects"
             data-aos="fade-up"
             data-aos-duration="1000"
             className="text-sm font-semibold text-white bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-400 transition-all cursor-pointer"
           >
-            Our Services
-          </a>
-          <a
-            href="/contact"
+            Our Projects
+          </Link>
+          <Link
+            to="/contact"
             data-aos="fade-up"
             data-aos-duration="1000"
             className="text-sm font-semibold text-blue-400 bg-slate-100 border border-blue-400 py-2 px-6 rounded-lg hover:bg-slate-50 transition-all cursor-pointer"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
       <Team />
