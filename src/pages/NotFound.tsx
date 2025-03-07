@@ -8,8 +8,7 @@ export default function NotFound() {
           404 - <span className="text-blue-400">Page Not Found</span>
         </h1>
         <p className="leading-7 text-slate-500 pb-3 mt-6 text-center">
-          Oops! The page you're looking for doesn't exist or may have been
-          moved.
+          Oops! The page you're looking for doesn't exist or is not yet implemented.
         </p>
         <div className="flex gap-4">
           <Link
