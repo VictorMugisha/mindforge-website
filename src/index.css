@@ -32,7 +32,7 @@ body {
 
 @layer utilities {
   .custom-transparent-black {
-    background-color: rgba(0, 0, 0, 0.532);
+    background-color: rgba(0, 0, 0, 0.732);
   }
 }
 

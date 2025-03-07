@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import Layout from "./layouts/Layout";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import Gallery from "./pages/Gallery";
 
 function App() {
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<About />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="gallery" element={<NotFound />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="blog" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Route>
