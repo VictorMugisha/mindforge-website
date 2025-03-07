@@ -90,7 +90,7 @@ export default function Header() {
         </ul>
         <NavLink
           to="/contact"
-          className="text-lg font-semibold text-white bg-blue-500 py-3 px-4 rounded-lg hover:bg-blue-400 transition-all cursor-pointer"
+          className="text-sm font-semibold text-white bg-blue-500 py-3 px-4 rounded-lg hover:bg-blue-400 transition-all cursor-pointer"
           onClick={handleCloseNav}
         >
           Contact Us

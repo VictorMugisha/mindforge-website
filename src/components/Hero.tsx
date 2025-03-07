@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="flex items-center justify-between gap-7 md:px-8 md:py-10 w-full bg-linear-to-r from-blue-100 to-blue-50">
@@ -22,12 +24,16 @@ export default function Hero() {
           Community. By promoting transparency and accountability.
         </p>
         <div className="flex gap-4">
-          <button className="text-sm font-semibold text-white bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">
-            Contact Us
-          </button>
-          <button className="text-sm font-semibold text-blue-400 bg-slate-100 border border-blue-400 py-2 px-6 rounded-lg hover:bg-slate-50 hover:transition-all cursor-pointer">
-            View More
-          </button>
+          <Link to="/contact">
+            <button className="text-sm font-semibold text-white bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">
+              Contact Us
+            </button>
+          </Link>
+          <Link to="/about">
+            <button className="text-sm font-semibold text-blue-400 bg-slate-100 border border-blue-400 py-2 px-6 rounded-lg hover:bg-slate-50 hover:transition-all cursor-pointer">
+              View More
+            </button>
+          </Link>
         </div>
       </div>
       <img
