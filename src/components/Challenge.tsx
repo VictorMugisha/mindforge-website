@@ -24,7 +24,7 @@ export default function Challenge({
 }: ChallengeProps) {
   return (
     <div className="flex flex-col md:flex-row md:items-center gap-6 p-4 md:p-8 bg-gray-100 rounded-lg shadow-lg mx-4 lg:mx-10">
-      <div className="w-full md:w-1/2 2xl:w-1/4">
+      <div className="w-full md:w-1/2">
         <LiteYouTubeEmbed
           id={videoId}
           title="Challenge 1 - Think Tank Introduction"
