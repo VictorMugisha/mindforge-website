@@ -37,7 +37,7 @@ export default function Team() {
     },
   ];
   return (
-    <section className="py-10 px-4 md:px-8 bg-white flex flex-col items-center justify-center">
+    <section className="py-10 md:py-16 px-4 md:px-8 bg-white flex flex-col items-center justify-center">
       <div className="text-center w-full max-w-2xl flex flex-col gap-4">
         <h2 className="font-bold text-3xl md:text-4xl text-slate-700">
           Meet Our Team

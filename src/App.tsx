@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Layout from "./layouts/Layout";
 import About from "./pages/About";
+import Projects from "./pages/Projects";
 
 function App() {
   useEffect(() => {
@@ -18,7 +19,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<About />} />
-          <Route path="projects" element={<NotFound />} />
+          <Route path="projects" element={<Projects />} />
           <Route path="gallery" element={<NotFound />} />
           <Route path="blog" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
