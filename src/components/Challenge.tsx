@@ -7,6 +7,7 @@ interface ChallengeProps {
   description2: string;
   thumbnail: string;
   videoId: string;
+  date: string;
   videoUrl: string;
   hashatgs?: string[];
 }
@@ -17,6 +18,7 @@ export default function Challenge({
   description2,
   thumbnail,
   videoId,
+  date,
   videoUrl,
   hashatgs,
 }: ChallengeProps) {
@@ -30,6 +32,7 @@ export default function Challenge({
         />
       </div>
       <div className="w-full md:w-1/2 flex flex-col justify-center">
+        <p className="text-xs md:text-sm text-gray-500 mb-2">{date}</p>
         <h2 className="text-lg lg:text-2xl font-bold mb-4 text-blue-600">
           {title}
         </h2>
@@ -49,7 +52,10 @@ export default function Challenge({
         </a>
         <div className="flex flex-wrap mt-4 gap-y-2">
           {hashatgs?.map((hashatg, index) => (
-            <span key={index} className="text-xs bg-gray-300 text-gray-700 px-2 py-1 rounded-lg mr-2">
+            <span
+              key={index}
+              className="text-xs bg-gray-300 text-gray-700 px-2 py-1 rounded-lg mr-2"
+            >
               #{hashatg}
             </span>
           ))}
