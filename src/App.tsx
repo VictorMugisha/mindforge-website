@@ -8,6 +8,7 @@ import Layout from "./layouts/Layout";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="blog" element={<NotFound />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
