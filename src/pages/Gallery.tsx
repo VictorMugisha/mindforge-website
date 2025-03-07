@@ -6,14 +6,15 @@ interface Image {
   alt: string;
 }
 
-const images: Image[] = [
-  { id: 1, src: "/challenge-2.jpg", alt: "Challenge 2" },
-  { id: 2, src: "/challenge-3.jpeg", alt: "Challenge 3" },
-  { id: 3, src: "/mindforge-team.jpg", alt: "Mindforge Team" },
-];
-
-const Gallery: React.FC = () => {
+export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
+
+  const images: Image[] = [
+    { id: 1, src: "/challenge-2.jpg", alt: "Challenge 2 - The Voice of Massai" },
+    { id: 2, src: "/challenge-3.jpeg", alt: "Challenge 3 - Umuganda with Mayor of Kigali City" },
+    { id: 3, src: "/mindforge-team.jpg", alt: "Mindforge Team" },
+    { id: 4, src: "/challenge-4.jpg", alt: "Challenge 4 - A Visit to Minaffet" },
+  ];
 
   const openModal = (image: Image) => {
     setSelectedImage(image);
@@ -43,16 +44,16 @@ const Gallery: React.FC = () => {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-75 backdrop-blur-sm z-50"
+          className="fixed inset-0 flex flex-col items-center justify-center custom-transparent-black backdrop-blur-sm z-50"
           onClick={closeModal}
         >
           {/* Modal Header */}
-          <div className="w-full flex justify-between items-center p-4 bg-black bg-opacity-75">
+          <div className="w-full flex justify-between items-center p-4">
             <h2 className="text-white text-lg sm:text-xl">
               {selectedImage.alt}
             </h2>
             <button
-              className="text-white text-3xl sm:text-4xl font-bold"
+              className="text-white text-3xl sm:text-5xl font-bold cursor-pointer"
               onClick={closeModal}
             >
               &times;
@@ -70,6 +71,4 @@ const Gallery: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default Gallery;
+}
