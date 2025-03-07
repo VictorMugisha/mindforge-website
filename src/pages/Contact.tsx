@@ -19,7 +19,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [successMessage, setSuccessMessage] = useState<string>("");
 
-  const validate = (): boolean => {
+  function validate(): boolean {
     const newErrors: Partial<FormData> = {};
 
     if (!formData.name.trim()) {
@@ -44,16 +44,16 @@ export default function Contact() {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }
 
-  const handleChange = (
+  function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ) {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+  }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     if (!validate()) {
@@ -68,10 +68,10 @@ export default function Contact() {
     } catch {
       setErrors({ message: "Failed to send your message. Please try again." });
     }
-  };
+  }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center my-10">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
           Contact Us
@@ -162,7 +162,7 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
           >
             Submit
           </button>
