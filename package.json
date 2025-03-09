@@ -21,12 +21,14 @@
     "react-lite-youtube-embed": "^2.4.0",
     "react-lite-yt-embed": "^1.2.7",
     "react-router-dom": "^7.2.0",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/aos": "^3.0.7",
+    "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

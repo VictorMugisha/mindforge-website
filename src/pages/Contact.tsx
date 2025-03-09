@@ -1,5 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
 
 interface FormData {
   firstName: string;
@@ -21,7 +22,7 @@ export default function Contact() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
-  const [successMessage, setSuccessMessage] = useState<string>("");
+  const [sending, setSending] = useState(false);
 
   function validate(): boolean {
     const newErrors: Partial<FormData> = {};
@@ -36,14 +37,22 @@ export default function Contact() {
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Email is invalid.";
     }
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required.";
-    } else if (!/^\+?[1-9]\d{1,14}$/.test(formData.phone)) {
+    }
+
+    if (!/[1-9]\d{1,14}$/.test(formData.phone)) {
       newErrors.phone = "Phone number is invalid.";
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = "Subject is required.";
     }
 
     if (!formData.message.trim()) {
@@ -51,6 +60,7 @@ export default function Contact() {
     }
 
     setErrors(newErrors);
+    console.log(Object.keys(newErrors).length === 0);
     return Object.keys(newErrors).length === 0;
   }
 
@@ -69,8 +79,29 @@ export default function Contact() {
     }
 
     try {
-      await axios.post("/api/send-email", formData);
-      setSuccessMessage("Your message has been sent successfully!");
+      setSending(true);
+
+      const templateParams = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.message,
+        message: formData.message,
+      };
+
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+
+      // Send the email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      toast.success("Thanks for your feedback", {
+        position: "top-center",
+        autoClose: 5000,
+      });
+
       setFormData({
         firstName: "",
         lastName: "",
@@ -79,10 +110,15 @@ export default function Contact() {
         subject: "",
         message: "",
       });
-      setErrors({});
     } catch {
-      setErrors({ message: "Failed to send your message. Please try again." });
+      toast.error("Failed to send your message. Please try again.", {
+        position: "top-center",
+        autoClose: 5000,
+      });
+    } finally {
+      setSending(false);
     }
+
   }
 
   return (
@@ -91,9 +127,6 @@ export default function Contact() {
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
           Contact Form
         </h2>
-        {successMessage && (
-          <p className="mb-4 text-green-600 text-center">{successMessage}</p>
-        )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -152,10 +185,13 @@ export default function Contact() {
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
             />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+            )}
           </div>
           <div>
             <label htmlFor="phone" className="block text-sm font-medium">
-              Phone
+              Phone <span className="text-red-500">*</span>
             </label>
             <input
               type="tel"
@@ -166,10 +202,13 @@ export default function Contact() {
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
             />
+            {errors.phone && (
+              <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+            )}
           </div>
           <div>
             <label htmlFor="subject" className="block text-sm font-medium">
-              Subject
+              Subject <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -180,6 +219,9 @@ export default function Contact() {
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
             />
+            {errors.subject && (
+              <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
+            )}
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium">
@@ -194,14 +236,31 @@ export default function Contact() {
               className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
               rows={4}
             />
+            {errors.message && (
+              <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+            )}
           </div>
           <button
             type="submit"
             className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+            disabled={sending}
           >
-            Submit
+            {sending ? "Sending..." : "Send Your Message"}
           </button>
         </form>
+
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
     </div>
   );
