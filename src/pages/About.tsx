@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Team from "../components/Team";
+import Mission from "../components/Mission";
+import Vision from "../components/Vision";
 
 export default function About() {
   return (
@@ -44,6 +46,8 @@ export default function About() {
         </div>
       </div>
       <Team />
+      <Mission />
+      <Vision />
     </section>
   );
 }

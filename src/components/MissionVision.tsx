@@ -1,4 +1,5 @@
 import { IoNotificationsSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function MissionVision() {
   return (
@@ -20,9 +21,11 @@ export default function MissionVision() {
           Corruption undermines institutional integrity, hampers economic
           development, and erodes public trust.
         </p>
-        <button className="text-sm font-semibold text-white bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">
-          Learn More
-        </button>
+        <Link to="/about#mission">
+          <button className="text-sm font-semibold text-white bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-400 hover:transition-all cursor-pointer">
+            Learn More
+          </button>
+        </Link>
       </div>
 
       <div
@@ -39,9 +42,11 @@ export default function MissionVision() {
           prevails, governance is transparent, and government policies are
           implemented effectively for the benefit of all citizens.
         </p>
-        <button className="text-sm font-semibold text-blue-400 bg-slate-100 border border-blue-400 py-2 px-6 rounded-lg hover:bg-slate-50 hover:transition-all cursor-pointer">
-          View More
-        </button>
+        <Link to="/about#mission">
+          <button className="text-sm font-semibold text-blue-400 bg-slate-100 border border-blue-400 py-2 px-6 rounded-lg hover:bg-slate-50 hover:transition-all cursor-pointer">
+            View More
+          </button>
+        </Link>
       </div>
     </section>
   );
