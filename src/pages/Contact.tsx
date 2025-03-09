@@ -2,17 +2,21 @@ import { useState } from "react";
 import axios from "axios";
 
 interface FormData {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
+  subject: string;
   message: string;
 }
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
 
@@ -22,8 +26,12 @@ export default function Contact() {
   function validate(): boolean {
     const newErrors: Partial<FormData> = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required.";
+    }
+
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required.";
     }
 
     if (!formData.email.trim()) {
@@ -63,7 +71,14 @@ export default function Contact() {
     try {
       await axios.post("/api/send-email", formData);
       setSuccessMessage("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
       setErrors({});
     } catch {
       setErrors({ message: "Failed to send your message. Please try again." });
@@ -72,38 +87,61 @@ export default function Contact() {
 
   return (
     <div className="flex justify-center items-center my-10">
-      <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md mx-4">
+      <div className="w-full max-w-2xl p-6 bg-white rounded-lg shadow-md mx-4">
         <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
-          Contact Us
+          Contact Form
         </h2>
         {successMessage && (
           <p className="mb-4 text-green-600 text-center">{successMessage}</p>
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.name
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-blue-500"
-              }`}
-            />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-            )}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="firstName" className="block text-sm font-medium">
+                First Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                  errors.firstName
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
+                }`}
+              />
+              {errors.firstName && (
+                <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+              )}
+            </div>
+            <div>
+              <label htmlFor="lastName" className="block text-sm font-medium">
+                Last Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
+                  errors.lastName
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
+                }`}
+              />
+              {errors.lastName && (
+                <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+              )}
+            </div>
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium">
-              Email
+              Email *
             </label>
             <input
               type="email"
@@ -112,15 +150,8 @@ export default function Contact() {
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.email
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-blue-500"
-              }`}
+              className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
             />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-            )}
           </div>
           <div>
             <label htmlFor="phone" className="block text-sm font-medium">
@@ -133,19 +164,26 @@ export default function Contact() {
               placeholder="Your Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.phone
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-blue-500"
-              }`}
+              className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
             />
-            {errors.phone && (
-              <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
-            )}
+          </div>
+          <div>
+            <label htmlFor="subject" className="block text-sm font-medium">
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
+            />
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium">
-              Message
+              Message *
             </label>
             <textarea
               id="message"
@@ -153,20 +191,13 @@ export default function Contact() {
               placeholder="Your Message..."
               value={formData.message}
               onChange={handleChange}
-              className={`mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 ${
-                errors.message
-                  ? "border-red-500 focus:ring-red-500"
-                  : "border-gray-300 focus:ring-blue-500"
-              }`}
+              className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500"
               rows={4}
             />
-            {errors.message && (
-              <p className="mt-1 text-sm text-red-600">{errors.message}</p>
-            )}
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Submit
           </button>
