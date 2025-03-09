@@ -10,7 +10,7 @@ export default function Team() {
     {
       name: "Chanella Keza",
       role: "Marketing Manager",
-      image: "/profile-1.png",
+      image: "/chanella-profile.png",
       firstColor: "from-blue-100",
       secondColor: "to-blue-200",
     },
