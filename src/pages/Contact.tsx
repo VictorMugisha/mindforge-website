@@ -60,7 +60,6 @@ export default function Contact() {
     }
 
     setErrors(newErrors);
-    console.log(Object.keys(newErrors).length === 0);
     return Object.keys(newErrors).length === 0;
   }
 
