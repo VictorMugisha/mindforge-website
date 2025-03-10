@@ -9,25 +9,22 @@ export default function Vision() {
             className="w-full h-auto rounded-lg shadow-md"
           />
         </div>
-        <div
-          className="md:w-1/2 mt-8 md:mt-0"
-          data-aos="fade-left"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Vision</h2>
-          <p className="text-xl italic mb-6">
+        <div className="md:w-1/2 mt-8 md:mt-0">
+          <h2 className="text-lg md:text-3xl font-bold text-blue-600 mb-4">
+            Our Vision
+          </h2>
+          <p className="text-sm md:text-xl italic mb-6">
             "To cultivate a transparent and thriving East African Community
             where integrity drives development and prosperity."
           </p>
-          <p className="mb-4 text-gray-700">
+          <p className="text-sm md:text-lg mb-4 text-gray-700">
             MindForge envisions an East African Community where transparency and
             accountability are the norms, leading to sustainable development and
             widespread prosperity. We aspire to create societies where
             governments operate with integrity, citizens trust public
             institutions, and economic opportunities are accessible to all.
           </p>
-          <p className="text-gray-700">
+          <p className="text-sm md:text-lg text-gray-700">
             By eradicating corruption, we aim to unlock the region's full
             potential, attracting investment, fostering innovation, and
             improving the quality of life for all citizens. Our vision is a
