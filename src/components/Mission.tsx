@@ -2,12 +2,7 @@ export default function Mission() {
   return (
     <section className="bg-white py-12 px-4 md:px-8">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div
-          className="md:w-1/2"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
+        <div className="md:w-1/2">
           <h2 className="text-3xl font-bold text-blue-600 mb-4">Our Mission</h2>
           <p className="text-xl italic mb-6">
             "Our mission is to tackle corruption in the East African Community

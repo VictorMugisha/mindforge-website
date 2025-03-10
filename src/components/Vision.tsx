@@ -2,12 +2,7 @@ export default function Vision() {
   return (
     <section className="bg-gray-100 py-12 px-4 md:px-8">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div
-          className="md:w-1/2 md:pr-8"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
+        <div className="md:w-1/2 md:pr-8">
           <img
             src="/prosperous_east_africa.jpg"
             alt="Prosperous East Africa"
