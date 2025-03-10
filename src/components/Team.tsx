@@ -31,7 +31,7 @@ export default function Team() {
     {
       name: "Boaz Prince Iza",
       role: "Software Developer",
-      image: "/profiles/profile-2.png",
+      image: "/profiles/boaz-profile.png",
       firstColor: "from-lime-50",
       secondColor: "to-lime-100",
     },
