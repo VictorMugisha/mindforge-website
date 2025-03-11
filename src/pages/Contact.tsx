@@ -85,13 +85,13 @@ export default function Contact() {
         lastName: formData.lastName,
         email: formData.email,
         phone: formData.phone,
-        subject: formData.message,
+        subject: formData.subject,
         message: formData.message,
       };
 
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       // Send the email using EmailJS
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
@@ -117,7 +117,6 @@ export default function Contact() {
     } finally {
       setSending(false);
     }
-
   }
 
   return (
