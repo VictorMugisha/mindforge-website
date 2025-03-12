@@ -24,7 +24,7 @@ export default function Team() {
     {
       name: "Grace Muzirankoni",
       role: "Public Relations",
-      image: "/profiles/profile-1.png",
+      image: "/profiles/grace-profile.png",
       firstColor: "from-emerald-50",
       secondColor: "to-emerald-100",
     },
