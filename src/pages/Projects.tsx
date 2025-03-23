@@ -9,7 +9,7 @@ export default function Projects() {
           data-aos-duration="1000"
           className="italic font-bold text-3xl md:text-5xl text-slate-600 pt-6 lg:pt-0 leading-10 md:leading-14"
         >
-          Our Projects - E-Lab Challenges
+          E-Lab Challenges
         </h1>
         <p
           data-aos="fade-up"
