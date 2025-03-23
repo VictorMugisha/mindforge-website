@@ -4,6 +4,7 @@ import { IoLogoYoutube } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Footer() {
   const [copySuccess, setCopySuccess] = useState(false);
@@ -16,6 +17,10 @@ export default function Footer() {
       setTimeout(() => setCopySuccess(false), 2000); // Reset after 2 seconds
     } catch (error) {
       console.log("Failed to copy: ", error);
+      toast.error("Failed to copy!", {
+        position: "top-center",
+        autoClose: 5000,
+      });
     }
   };
 
@@ -127,6 +132,19 @@ export default function Footer() {
           </a>
         </p>
       </div>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </footer>
   );
 }

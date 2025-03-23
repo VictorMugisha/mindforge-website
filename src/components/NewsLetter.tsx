@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function NewsLetter() {
   const [email, setEmail] = useState<string>("");
@@ -36,7 +38,35 @@ export default function NewsLetter() {
       setEmailError("Email is not valid.");
       return;
     }
+
+    const formData = {
+      email,
+    };
+
+    const templateParams = {
+      firstName: "",
+      lastName: "",
+      email: formData.email,
+      phone: "",
+      subject: "",
+      message: "",
+    };
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Send the email using EmailJS
+    toast.promise(
+      emailjs.send(serviceId, templateId, templateParams, publicKey),
+      {
+        pending: "Adding to newsletter...",
+        success: "Thanks for your feedback!",
+        error: "Failed to send your message. Please try again.",
+      }
+    );
   };
+
   return (
     <section className="w-full flex flex-col items-center py-16 md:py-24 justify-center gap-7 text-center ">
       <h2 className="font-bold text-2xl lg:text-3xl text-slate-700 px-4">
@@ -66,6 +96,19 @@ export default function NewsLetter() {
           </button>
         </div>
       </form>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </section>
   );
 }
