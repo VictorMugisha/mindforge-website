@@ -28,6 +28,7 @@ export default function Team() {
               </h3>
               <div className="w-20 h-1 bg-slate-300 rounded-4xl"></div>
               <p className="text-sm italic text-slate-500">{member.role}</p>
+              <p className="text-sm text-slate-500">{member.class}</p>
             </div>
           </div>
         ))}

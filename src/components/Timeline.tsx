@@ -4,7 +4,7 @@ export default function Timeline() {
       <h2 className="font-bold text-2xl md:text-3xl text-slate-700 pb-10 text-center">
         MindForge Impact: Driving Change in Africa
       </h2>
-      <div className="relative w-full max-w-6xl mx-auto py-12">
+      <div className="relative w-full max-w-[85rem] mx-auto py-12">
         <div className="hidden md:block border-l-4 border-dashed border-gray-300 absolute left-1/2 transform -translate-x-1/2 h-full bottom-4"></div>
 
         {/* First Block - Governance in Africa */}

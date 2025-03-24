@@ -4,7 +4,7 @@ import Challenge from "./Challenge";
 export default function Challenges() {
   
   return (
-    <section>
+    <section className="w-full max-w-[85rem] mx-auto">
       {challengesData.map((challenge, index) => (
         <Challenge
           key={index}

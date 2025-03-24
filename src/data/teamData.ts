@@ -1,13 +1,15 @@
 export const teamData = [
   {
     name: "Shania Keza",
-    role: "Team Leader",
+    class: "BEL Student",
+    role: "Public Relations",
     image: "/profiles/kesha-profile.png",
     firstColor: "from-slate-200",
     secondColor: "to-slate-300",
   },
   {
     name: "Chanella Keza",
+    class: "BEL Student",
     role: "Marketing Manager",
     image: "/profiles/chanella-profile.png",
     firstColor: "from-blue-100",
@@ -15,6 +17,7 @@ export const teamData = [
   },
   {
     name: "Victor Mugisha",
+    class: "BSE Student",
     role: "Software Developer",
     image: "/profiles/victor-profile.png",
     firstColor: "from-gray-200",
@@ -22,13 +25,15 @@ export const teamData = [
   },
   {
     name: "Grace Muzirankoni",
-    role: "Public Relations",
+    class: "BEL Student",
+    role: "Team Leader",
     image: "/profiles/grace-profile.png",
     firstColor: "from-emerald-50",
     secondColor: "to-emerald-100",
   },
   {
     name: "Boaz Prince Iza",
+    class: "BSE Student",
     role: "Software Developer",
     image: "/profiles/boaz-profile-2.png",
     firstColor: "from-lime-50",

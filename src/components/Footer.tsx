@@ -30,7 +30,7 @@ export default function Footer() {
         {/* Company Info */}
         <div>
           <h1 className="text-2xl font-bold text-blue-500">MindForge</h1>
-          <p className="text-slate-700 mt-2">
+          <p className="text-slate-700 mt-2 text-sm">
             MindForge is a dynamic think tank comprising highly motivated
             individuals dedicated to addressing challenges in the East African
             Community through innovative solutions.
@@ -79,7 +79,7 @@ export default function Footer() {
         {/* Support and Social Media */}
         <div>
           <h2 className="text-xl font-semibold text-slate-800">Support Us</h2>
-          <p className="text-slate-700 mt-2">
+          <p className="text-slate-700 mt-2 text-sm">
             Would you like to support the development of our projects? Feel free
             to MoMo us on <span className="font-medium">+250 799 303 355</span>.
           </p>
