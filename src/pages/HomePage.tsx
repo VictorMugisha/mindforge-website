@@ -3,6 +3,7 @@ import HeroServices from "../components/HeroServices";
 import Impact from "../components/Impact";
 import MissionVision from "../components/MissionVision";
 import NewsLetter from "../components/NewsLetter";
+import PartnersSection from "../components/PartnersSection";
 import ProblemStatement from "../components/ProblemStatement";
 import SolutionOverview from "../components/SolutionOverview";
 import Timeline from "../components/Timeline";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <ProblemStatement />
       <SolutionOverview />
       <MissionVision />
+      <PartnersSection />
       <NewsLetter />
     </>
   );
