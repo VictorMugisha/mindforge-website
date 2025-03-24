@@ -4,9 +4,8 @@ import { ImCross } from "react-icons/im";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
-  { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Projects", href: "/projects" },
+  { name: "E-Lab Challenges", href: "/projects" },
   { name: "Gallery", href: "/gallery" },
   { name: "Blogs", href: "/blogs" },
 ];
@@ -38,7 +37,7 @@ export default function Header() {
   }, [displayMobileNav]);
 
   return (
-    <header className="flex items-center justify-between py-2 px-4 md:px-8 w-full md:rounded-lg shadow-sm md:shadow-lg bg-white sticky top-0 z-10">
+    <header className="flex items-center justify-between py-2 px-4 md:px-8 w-full md:rounded-lg  bg-white sticky top-0 z-50">
       <button
         onClick={handleLogoClick}
         className="focus:outline-none cursor-pointer"
