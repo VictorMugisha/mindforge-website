@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="flex items-center justify-between gap-7 md:px-8 md:py-10 w-full bg-linear-to-r from-blue-100 to-blue-50">
+    <section className="flex items-center justify-between gap-7 md:px-8 md:py-0 w-full bg-linear-to-r from-blue-100 to-blue-50">
       <div className="w-full flex flex-col items-center lg:items-start gap-5 mb-10 py-10 px-4 md:p-0">
         <h1
           data-aos="fade-up"
@@ -40,9 +40,10 @@ export default function Hero() {
         data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-delay="200"
-        src="/leadership-rafiki.png"
+        // src="/leadership-rafiki.png"
+        src="/mindforge-team.jpg"
         alt="Leadership"
-        className="hidden lg:block size-1/2 object-cover object-center"
+        className="hidden lg:block size-1/2 object-cover object-center opacity-1"
       />
     </section>
   );

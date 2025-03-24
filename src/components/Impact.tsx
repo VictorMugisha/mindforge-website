@@ -7,7 +7,7 @@ export default function Impact() {
         data-aos-delay="200"
         className="font-bold text-2xl md:text-3xl lg:text-4xl text-slate-700 px-4"
       >
-        Transforming Governance: Our Success Stories
+        Transforming Governance: Our Impact
       </h2>
       <p
         data-aos="fade-up"
