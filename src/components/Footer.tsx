@@ -65,7 +65,7 @@ export default function Footer() {
                 to="/projects"
                 className="text-slate-600 hover:text-blue-500 transition-colors cursor-pointer"
               >
-                Projects
+                E-Lab Challenges
               </Link>
             </li>
             <li>
