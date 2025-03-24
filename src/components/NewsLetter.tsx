@@ -70,8 +70,9 @@ export default function NewsLetter() {
   return (
     <section className="w-full flex flex-col items-center py-16 md:py-24 justify-center gap-7 text-center ">
       <h2 className="font-bold text-2xl lg:text-3xl text-slate-700 px-4">
-        Interested in us? Subscribe to our Newsletter
+        Are you interested? Don't worry!
       </h2>
+      <p>Don't Miss Out: Join Our Newsletter for Exclusive Updates</p>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-2 md:gap-0 md:flex-row items-center justify-center w-full md:w-md relative">
           <input

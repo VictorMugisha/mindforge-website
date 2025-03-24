@@ -5,9 +5,20 @@ import { FaPhone } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import ProfileModal from "./ProfileModal";
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+
+  function closeModal() {
+    setIsModalOpen(false);
+  }
+
+  function openModal() {
+    setIsModalOpen(true);
+  }
+
   const ussdCode = "*182*1*1*0799303355#";
 
   const copyToClipboard = async () => {
@@ -123,14 +134,14 @@ export default function Footer() {
         <p className="text-center text-slate-600">
           <span className="font-semibold text-blue-500">MindForge:</span> &copy;
           All Rights Reserved, 2025. Proudly developed by{" "}
-          <a
-            href="https://github.com/VictorMugisha"
-            target="_blank"
+          <button
+            onClick={openModal}
             className="text-blue-500 underline font-semibold cursor-pointer"
           >
             Victor Mugisha
-          </a>
+          </button>
         </p>
+        <ProfileModal isOpen={isModalOpen} closeModal={closeModal} />
       </div>
 
       <ToastContainer
