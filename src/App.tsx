@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./pages/BlogPost";
 import ScrollToTop from "./components/ScrollToTop";
+import Prototype from "./pages/Prototype";
 
 export default function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="prototype" element={<Prototype />} />
           <Route path="blogs/:blogId" element={<BlogPost />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

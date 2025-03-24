@@ -8,6 +8,7 @@ const navItems = [
   { name: "E-Lab Challenges", href: "/projects" },
   { name: "Gallery", href: "/gallery" },
   { name: "Blogs", href: "/blogs" },
+  { name: "Prototype", href: "/prototype" },
 ];
 
 export default function Header() {

@@ -84,6 +84,14 @@ export default function Footer() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link
+                to="/prototype"
+                className="text-slate-600 hover:text-blue-500 transition-colors cursor-pointer"
+              >
+                Prototype
+              </Link>
+            </li>
           </ul>
         </div>
 
