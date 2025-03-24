@@ -13,7 +13,7 @@ export default function ProblemStatement() {
           <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 px-0 sm:px-2">
             The Challenge of Corruption in Governance
           </h2>
-          <p className="mt-4 text-lg text-gray-600 leading-relaxed px-12">
+          <p className="mt-4 text-lg text-gray-600 leading-relaxed md:px-12">
             Corruption stands as a formidable barrier to equitable development,
             eroding public trust and diverting resources from essential
             services. It manifests in various forms—

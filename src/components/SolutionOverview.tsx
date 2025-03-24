@@ -17,7 +17,7 @@ export default function SolutionSection() {
           <LightBulbIcon className="h-16 w-16 text-green-600" />
         </div>
         {/* Solution Title */}
-        <h2 className="mt-6 text-4xl font-extrabold text-gray-800 z-30">
+        <h2 className="mt-6 text-2xl md:text-4xl font-extrabold text-gray-800 z-30">
           Introducing the Digital Accountability Platform (DAP)
         </h2>
         {/* Solution Description */}
