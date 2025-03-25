@@ -36,7 +36,7 @@ export default function MissionVision() {
       >
         <img src="/vision.png" alt="Vision Illustration" className="w-1/2" />
         <IoNotificationsSharp className="text-6xl text-amber-500 absolute top-[-25px] right-5 rotate-45 hover:text-9xl hover:top-[-60px] hover:right-0 transition-all cursor-pointer" />
-        <h2 className="text-2xl font-bold text-white">Our Vission Statement</h2>
+        <h2 className="text-2xl font-bold text-white">Our Vision Statement</h2>
         <p>
           Our vision is to establish an East African Community where integrity
           prevails, governance is transparent, and government policies are
